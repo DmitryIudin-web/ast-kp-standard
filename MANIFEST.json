@@ -1,0 +1,165 @@
+{
+  "version": "1.0.0-rc1",
+  "status": "prepared_for_review_and_explicit_use",
+  "date": "2026-10-23",
+  "timezone": "Europe/Samara",
+  "outputs": {
+    "a4": [
+      1588,
+      2246
+    ],
+    "social": [
+      1080,
+      1350
+    ]
+  },
+  "template_fields": [
+    "AVAILABILITY",
+    "BODY_INTERIOR",
+    "BRAND_SUBTITLE",
+    "CLIENT_PRICE",
+    "COLOR",
+    "COMPANY_DETAILS",
+    "COMPANY_NAME",
+    "CONTACT_LINE",
+    "DATE",
+    "DELIVERY_DETAILS",
+    "DELIVERY_SHORT",
+    "DELIVERY_UNIT",
+    "DOCUMENTS",
+    "ENGINE_DESCRIPTION",
+    "ENGINE_TYPE",
+    "ENGINE_VOLUME",
+    "FEATURE_1",
+    "FEATURE_2",
+    "FEATURE_3",
+    "FEATURE_4",
+    "FEATURE_5",
+    "FEATURE_6",
+    "FOOTNOTE",
+    "FUEL_DRIVE",
+    "MAKE",
+    "MILEAGE",
+    "MODEL_MAIN",
+    "MODEL_SUFFIX",
+    "PAYMENT_TERMS",
+    "PHOTO_1",
+    "PHOTO_2",
+    "PHOTO_3",
+    "PHOTO_4",
+    "PHOTO_5",
+    "PHOTO_CAPTION",
+    "PHOTO_HERO",
+    "POWER",
+    "POWER_UNIT",
+    "PRICE_INCLUDES",
+    "PRICE_LABEL",
+    "PRICE_NOTE",
+    "QUOTE_ID",
+    "REVISION_LABEL",
+    "SOCIAL_TERMS",
+    "STEERING",
+    "TAGLINE",
+    "TRANSMISSION",
+    "TRIM",
+    "VALID_UNTIL",
+    "WHY_1_TEXT",
+    "WHY_1_TITLE",
+    "WHY_2_TEXT",
+    "WHY_2_TITLE",
+    "WHY_3_TEXT",
+    "WHY_3_TITLE",
+    "WHY_4_TEXT",
+    "WHY_4_TITLE",
+    "YEAR"
+  ],
+  "files": {
+    ".gitattributes": {
+      "sha256": "9b742d3c5ad5935d93fae74d54bd3e6e7b9416082b2fd9d542cbe2c10241ca40",
+      "bytes": 142
+    },
+    ".gitignore": {
+      "sha256": "2063d3b4aabda30f7e89b4cc6803f2fd4abaeb433086deba4a31b202bf40bcbf",
+      "bytes": 63
+    },
+    "assets/ast-logo.png": {
+      "sha256": "e1fde5951381ba82e12170c7cfc4874e8fd2dc6d5b9a317e36b61ebc50fbb4a8",
+      "bytes": 91873
+    },
+    "assets/fonts/Inter-OFL.txt": {
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "bytes": 4377
+    },
+    "assets/fonts/Inter.ttf": {
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "bytes": 876576
+    },
+    "assets/fonts/Jost-OFL.txt": {
+      "sha256": "1af3438a4d5f0ed2bdbc5751a5a67ebf6d537334161184b7fbb68503ef0ea0c5",
+      "bytes": 4384
+    },
+    "assets/fonts/Jost.ttf": {
+      "sha256": "6343b70971000b04c5d401c96ae08ce371086135e999d5e1e1413039c0213076",
+      "bytes": 134996
+    },
+    "assets/fonts/SOURCES.md": {
+      "sha256": "cdec7c2c9d12085d0898006546326ee541a907d76283be04d3976611eb8026e0",
+      "bytes": 549
+    },
+    "assets/photo-placeholder.svg": {
+      "sha256": "3bb45d5de390cf8eec7fd06ccb85de1d9f17ac37dbc9af9af2d613397dbbc2bd",
+      "bytes": 568
+    },
+    "data/quote.example.json": {
+      "sha256": "3f7cbc9deb200d062fd5e1d6c863b908afef6382f58c87031e5d7532fa65c16d",
+      "bytes": 3082
+    },
+    "examples/a4.html": {
+      "sha256": "fb0b15948f0c8c51bc480a8ea1a766580231626799dcf1c470cce2466aa45d67",
+      "bytes": 10736
+    },
+    "examples/a4.jpg": {
+      "sha256": "6ea0455e88ce5854781f0c0a4ce65248e9317e206aa24e5fcdf19ec2d5da127e",
+      "bytes": 382057
+    },
+    "examples/social.html": {
+      "sha256": "2b7b26b9b7a6ca2093f28c727e27c1d9104d0475c50efcde73b795774dbc70e7",
+      "bytes": 8092
+    },
+    "examples/social.jpg": {
+      "sha256": "999ce1a6aae28454705b2661dfdb37ab737c1a16ed13883fcbaf8101e5d4dfe5",
+      "bytes": 205155
+    },
+    "PROMPT.md": {
+      "sha256": "2247ced8f9a4c098d82a4db69bfb44e79384d2693df07f18365c47ff9390f037",
+      "bytes": 9215
+    },
+    "README.md": {
+      "sha256": "43da0f01485c687e2c8c6c25ca0f79d8d387370a2f5e23d42ef9f45b1bafdd0e",
+      "bytes": 4790
+    },
+    "STANDARD.md": {
+      "sha256": "77087cbb28f61b813df97ae22538a232dc4599d56578abf6fbdc81b7e797dc12",
+      "bytes": 9402
+    },
+    "templates/a4.html": {
+      "sha256": "def5c4fb37583db02e25b24537eea729d86a748146519017c8ce49b157bf86d9",
+      "bytes": 9513
+    },
+    "templates/social.html": {
+      "sha256": "2fa49db53acbc1a330b02af66544018d107818caeeb1866e20e61ed188a51961",
+      "bytes": 7402
+    },
+    "VERSION": {
+      "sha256": "627c3715dbd8d4505f82d6d11a9c6a4ddf7a5107360578e30ce6bafc1c150d56",
+      "bytes": 10
+    }
+  },
+  "checks": {
+    "demo_render": "passed",
+    "visual_review": "passed",
+    "external_requests": 0,
+    "local_paths_and_secret_patterns": "passed",
+    "production_integration": "not_performed"
+  }
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Карточка КП АСТ — {{QUOTE_ID}}</title><style>
+@font-face{font-family:Inter;src:url('../assets/fonts/Inter.ttf') format('truetype');font-weight:100 900;font-style:normal;font-display:block}
+@font-face{font-family:Jost;src:url('../assets/fonts/Jost.ttf') format('truetype');font-weight:100 900;font-style:normal;font-display:block}
+
+:root{
+ /* AST */ --bg:#f3f5f7;--ink:#111318;--red:#d71920;--red2:#c9121b;--mute:#5b626b;--line:#dadde2;--card:#fff;
+ /* марка (Lexus) — менять только этот слой */ --lx:#0b0c0e;--silver:#c8ccd2}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg)}
+body{width:1080px;height:1350px;overflow:hidden;font-family:Inter,Arial,sans-serif;color:var(--ink);position:relative}
+
+/* шапка АСТ */
+.bar{height:112px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;background:var(--card);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:18px}
+.brand img{width:64px;height:64px;border-radius:8px;display:block}
+.brand b{display:block;font-size:34px;font-weight:800;letter-spacing:.02em;line-height:1}
+.brand span{display:block;font-size:19px;color:var(--mute);margin-top:6px}
+.docno{display:flex;align-items:center;gap:16px;text-align:right;font-size:19px;color:var(--mute);line-height:1.4}
+.docno b{color:var(--ink);font-weight:700}
+.docno i{width:7px;height:52px;background:var(--red);border-radius:4px}
+
+/* hero — слой марки */
+.hero{position:relative;height:530px;background:var(--lx);overflow:hidden}
+.hero>img{position:absolute;right:0;top:0;width:760px;height:530px;object-fit:cover;object-position:52% 64%;filter:grayscale(.15) contrast(1.08)}
+.hero::after{content:"";position:absolute;inset:0;
+ background:linear-gradient(90deg,var(--lx) 0%,var(--lx) 26%,rgba(11,12,14,.72) 40%,rgba(11,12,14,0) 62%),
+            linear-gradient(0deg,rgba(11,12,14,.92) 0%,rgba(11,12,14,0) 32%)}
+.hx{position:absolute;z-index:2;left:56px;top:48px;bottom:96px;width:560px;display:flex;flex-direction:column;color:#fff}
+.make{font-family:Jost;font-weight:400;font-size:26px;letter-spacing:.6em;color:var(--silver)}
+.model{font-family:Jost;font-weight:200;font-size:140px;line-height:.9;letter-spacing:-.01em;margin-top:22px;white-space:nowrap}
+.model b{font-weight:500}
+.trim{font-family:Jost;font-weight:300;font-size:32px;letter-spacing:.3em;color:var(--silver);margin-top:14px}
+.rule{width:80px;height:6px;background:var(--red);margin:26px 0 0;border-radius:3px}
+.chips{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px}
+.chips span{font-size:19px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;border:1.5px solid rgba(200,204,210,.4);border-radius:8px;padding:9px 16px}
+.yr{position:absolute;z-index:2;right:56px;top:44px;font-family:Jost;font-weight:200;font-size:64px;color:rgba(255,255,255,.9);letter-spacing:.1em}
+
+/* цена + 4 цифры */
+.wrap{padding:0 56px}
+.pc{position:relative;z-index:3;margin-top:-70px;background:var(--card);border-radius:8px;box-shadow:0 30px 60px -28px rgba(17,19,24,.35);overflow:hidden}
+.price{padding:28px 36px 24px;border-left:9px solid var(--red)}
+.price .l{font-size:19px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.price .v{font-size:92px;font-weight:800;letter-spacing:-.025em;line-height:1;margin-top:10px;white-space:nowrap}
+.price .n{font-size:20px;color:var(--mute);margin-top:12px;line-height:1.4}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#fafbfc;border-top:1px solid var(--line)}
+.st{padding:22px 0 20px 30px;border-left:1px solid var(--line)}
+.st:first-child{border-left:0}
+.st .k{font-family:Jost;font-weight:400;font-size:52px;line-height:1}
+.st .k small{font-size:22px;color:var(--mute);margin-left:4px}
+.st .t{font-size:16px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:10px}
+
+/* галерея */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.gal img{width:100%;height:140px;object-fit:cover;border-radius:8px;display:block}
+
+/* почему АСТ */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:26px}
+.why div{display:flex;gap:10px;align-items:flex-start;font-size:18px;line-height:1.3}
+.why em{font-style:normal;font-family:Jost;font-weight:500;color:var(--red);font-size:30px;line-height:.95}
+.why b{display:block;font-weight:700}
+.why span{color:var(--mute)}
+
+/* подвал АСТ */
+footer{position:absolute;left:0;right:0;bottom:0;height:150px;background:var(--ink);color:#fff;padding:0 56px}
+footer::before{content:"";position:absolute;left:0;top:0;width:280px;height:6px;background:var(--red)}
+.fn{padding-top:22px;font-size:15px;color:#8d939b;line-height:1.45}
+.fr{display:flex;align-items:center;justify-content:space-between;margin-top:14px}
+.fr .c{font-size:19px;color:#aeb4bb;line-height:1.45}
+.fr .c b{color:#fff}
+.site{font-size:46px;font-weight:800;letter-spacing:.01em}
+.site i{font-style:normal;color:var(--red)}
+
+</style></head><body>
+<div class="bar"><div class="brand"><img class="logo" src="../assets/ast-logo.png" alt="АСТ"><div class="t"><b>АСТ</b><span>{{BRAND_SUBTITLE}}</span></div></div><div class="docno"><div>Коммерческое предложение<br><b>№ {{QUOTE_ID}} · {{DATE}}</b></div><i></i></div></div><section class="hero"><img src="{{PHOTO_HERO}}" alt="{{PHOTO_CAPTION}}"><div class="yr">{{YEAR}}</div><div class="hx"><div class="make">{{MAKE}}</div><div class="model">{{MODEL_MAIN}} <b>{{MODEL_SUFFIX}}</b></div><div class="trim">{{TRIM}}</div><div class="rule"></div><div class="chips"><span>{{AVAILABILITY}}</span><span>{{FUEL_DRIVE}}</span><span>{{COLOR}}</span></div></div></section><div class="wrap"><div class="pc"><div class="price"><div class="l">{{PRICE_LABEL}}</div><div class="v">{{CLIENT_PRICE}}</div><div class="n">{{PRICE_INCLUDES}}</div></div><div class="stats"><div class="st"><div class="k">{{POWER}}<small>{{POWER_UNIT}}</small></div><div class="t">Мощность</div></div><div class="st"><div class="k">{{ENGINE_VOLUME}}<small>{{ENGINE_TYPE}}</small></div><div class="t">Двигатель</div></div><div class="st"><div class="k">{{DELIVERY_SHORT}}<small>{{DELIVERY_UNIT}}</small></div><div class="t">Срок поставки</div></div><div class="st"><div class="k">{{MILEAGE}}<small>км</small></div><div class="t">Пробег</div></div></div></div><div class="gal"><img src="{{PHOTO_1}}" alt="{{PHOTO_CAPTION}}"><img src="{{PHOTO_3}}" alt="{{PHOTO_CAPTION}}"><img src="{{PHOTO_5}}" alt="{{PHOTO_CAPTION}}"></div><div class="why"><div><em>01</em><p><b>{{WHY_1_TITLE}}</b><span>{{WHY_1_TEXT}}</span></p></div><div><em>02</em><p><b>{{WHY_2_TITLE}}</b><span>{{WHY_2_TEXT}}</span></p></div><div><em>03</em><p><b>{{WHY_3_TITLE}}</b><span>{{WHY_3_TEXT}}</span></p></div><div><em>04</em><p><b>{{WHY_4_TITLE}}</b><span>{{WHY_4_TEXT}}</span></p></div></div></div><footer><div class="fn">{{SOCIAL_TERMS}} {{FOOTNOTE}} Действительно до {{VALID_UNTIL}}. {{REVISION_LABEL}}</div><div class="fr"><div class="c"><b>{{COMPANY_NAME}}</b> · {{COMPANY_DETAILS}}<br>{{CONTACT_LINE}}</div><div class="site">avtonds<i>.</i>ru</div></div></footer>
+</body></html>

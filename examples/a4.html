@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>КП АСТ — DEMO-001</title><style>
+@font-face{font-family:Inter;src:url('../assets/fonts/Inter.ttf') format('truetype');font-weight:100 900;font-style:normal;font-display:block}
+@font-face{font-family:Jost;src:url('../assets/fonts/Jost.ttf') format('truetype');font-weight:100 900;font-style:normal;font-display:block}
+
+@page{size:A4;margin:0}
+:root{
+ /* AST */ --bg:#f3f5f7;--ink:#111318;--red:#d71920;--red2:#c9121b;--mute:#5b626b;--line:#dadde2;--card:#fff;
+ /* Lexus */ --lx:#0b0c0e;--silver:#c8ccd2;--silver2:#9aa0a8}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{background:var(--bg)}
+body{width:210mm;height:297mm;overflow:hidden;font-family:Inter,Arial,sans-serif;color:var(--ink);font-size:8.4pt;position:relative}
+.lx{font-family:Jost,sans-serif}
+
+/* top bar — AST */
+.bar{height:17mm;padding:0 12mm;display:flex;align-items:center;justify-content:space-between;background:var(--card);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:3mm}
+.brand .logo{width:11mm;height:11mm;border-radius:8px;display:block}
+.brand .t{line-height:1.25}
+.brand .t b{display:block;font-size:10.5pt;font-weight:800;letter-spacing:.02em}
+.brand .t span{font-size:6.6pt;color:var(--mute)}
+.docno{display:flex;align-items:center;gap:3mm;font-size:7pt;color:var(--mute);text-align:right;line-height:1.45}
+.docno b{color:var(--ink);font-weight:700;font-size:8pt}
+.docno i{display:block;width:1.2mm;height:9mm;background:var(--red);border-radius:1mm}
+
+/* hero — Lexus monochrome */
+.hero{position:relative;height:112mm;background:var(--lx);overflow:hidden}
+.hero img{position:absolute;right:0;top:0;width:150mm;height:112mm;object-fit:cover;object-position:52% 64%;filter:grayscale(.15) contrast(1.08)}
+.hero::after{content:"";position:absolute;inset:0;
+ background:linear-gradient(90deg,var(--lx) 0%,var(--lx) 30%,rgba(11,12,14,.75) 42%,rgba(11,12,14,0) 62%),
+            linear-gradient(0deg,rgba(11,12,14,.9) 0%,rgba(11,12,14,0) 30%)}
+.hx{position:absolute;z-index:2;left:12mm;top:12mm;bottom:20mm;width:84mm;display:flex;flex-direction:column;color:#fff}
+.make{font-family:Jost;font-weight:400;font-size:9pt;letter-spacing:.62em;color:var(--silver)}
+.model{font-family:Jost;font-weight:200;font-size:58pt;line-height:.9;letter-spacing:-.01em;margin-top:5mm}
+.model b{font-weight:500}
+.trim{font-family:Jost;font-weight:300;font-size:12pt;letter-spacing:.32em;color:var(--silver);margin-top:3mm}
+.rule{width:16mm;height:1mm;background:var(--red);margin:6mm 0 5mm;border-radius:1mm}
+.tag{font-size:7.6pt;line-height:1.6;color:#b9bec5;max-width:66mm}
+.chips{margin-top:auto;display:flex;flex-wrap:wrap;gap:1.6mm}
+.chips span{font-size:6.6pt;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;border:1px solid rgba(200,204,210,.35);border-radius:8px;padding:1.3mm 2.4mm}
+.yr{position:absolute;z-index:2;right:12mm;top:9mm;font-family:Jost;font-weight:200;font-size:30pt;color:rgba(255,255,255,.88);letter-spacing:.1em}
+
+/* price + stats card — overlaps hero */
+.wrap{padding:0 12mm}
+.pc{position:relative;z-index:3;margin-top:-13mm;background:var(--card);border-radius:8px;box-shadow:0 6mm 14mm -6mm rgba(17,19,24,.28);display:grid;grid-template-columns:76mm 1fr;overflow:hidden}
+.price{padding:5mm 6mm;border-left:1.4mm solid var(--red);background:var(--card)}
+.price .l{font-size:6.6pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.price .v{font-size:25pt;font-weight:800;letter-spacing:-.02em;margin-top:1.4mm;white-space:nowrap}
+.price .n{font-size:6.8pt;color:var(--mute);margin-top:1.2mm;line-height:1.45}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#fafbfc;border-left:1px solid var(--line)}
+.st{padding:5mm 0 4mm 4.5mm;border-left:1px solid var(--line)}
+.st:first-child{border-left:0}
+.st .k{font-family:Jost;font-weight:400;font-size:19pt;line-height:1}
+.st .k small{font-size:8pt;color:var(--mute);margin-left:.8mm;font-weight:400}
+.st .t{font-size:6.2pt;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:2mm}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(5,1fr);gap:2mm;margin-top:5mm}
+.gal img{width:100%;height:27mm;object-fit:cover;border-radius:8px;display:block}
+
+/* info cards */
+.cols{display:grid;grid-template-columns:1fr 1fr 1.1fr;gap:3.5mm;margin-top:5mm}
+.card{background:var(--card);border-radius:8px;padding:4.2mm 4.5mm;border:1px solid var(--line)}
+h3{font-size:7pt;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:3mm;display:flex;align-items:center;gap:2mm}
+h3::before{content:"";width:1.2mm;height:3.4mm;background:var(--red);border-radius:.6mm}
+dl{display:grid;grid-template-columns:auto 1fr;row-gap:1.5mm;column-gap:2mm;line-height:1.3}
+dt{color:var(--mute)} dd{text-align:right;font-weight:500}
+ul{list-style:none;line-height:1.3}
+li{padding:.8mm 0 .8mm 4mm;position:relative}
+li::before{content:"";position:absolute;left:0;top:1.9mm;width:1.5mm;height:1.5mm;border-radius:50%;border:1.3px solid var(--red)}
+.cond p{line-height:1.42;margin-bottom:1.6mm}
+.cond b{display:block;font-size:6.4pt;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:700}
+
+/* why AST */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:3.5mm;margin-top:4mm}
+.why div{display:flex;gap:2.4mm;align-items:flex-start;font-size:7.2pt;line-height:1.35}
+.why div em{font-style:normal;font-family:Jost;font-weight:500;color:var(--red);font-size:13pt;line-height:1}
+.why b{display:block;font-weight:700}
+.why span{color:var(--mute)}
+.note{margin-top:3.4mm;font-size:6.3pt;color:#7d848c;line-height:1.5}
+
+/* footer — AST dark */
+footer{position:absolute;left:0;right:0;bottom:0;height:17mm;background:var(--ink);color:#fff;padding:0 12mm;display:flex;align-items:center;justify-content:space-between;font-size:7.2pt}
+footer::before{content:"";position:absolute;left:0;top:0;width:52mm;height:1mm;background:var(--red)}
+footer .c{color:#aeb4bb;line-height:1.55}
+footer .c b{color:#fff}
+footer .site{font-size:13pt;font-weight:800;letter-spacing:.01em}
+footer .site i{font-style:normal;color:var(--red)}
+
+</style></head><body>
+<div class="bar"><div class="brand"><img class="logo" src="../assets/ast-logo.png" alt="АСТ"><div class="t"><b>АСТ</b><span>Единый формат коммерческих предложений</span></div></div><div class="docno"><div>Коммерческое предложение<br><b>№ DEMO-001 · ОБРАЗЕЦ</b></div><i></i></div></div><section class="hero"><img src="../assets/photo-placeholder.svg" alt="Демонстрационное место для фотографии"><div class="yr">—</div><div class="hx"><div class="make">МАРКА</div><div class="model">MOD <b>X</b></div><div class="trim">ДЕМОНСТРАЦИЯ</div><div class="rule"></div><div class="tag">Пример оформления без реального автомобиля, цены и коммерческих условий.</div><div class="chips"><span>ОБРАЗЕЦ</span><span>НЕ ПРЕДЛОЖЕНИЕ</span><span>ДЕМО</span></div></div></section><div class="wrap"><div class="pc"><div class="price"><div class="l">Клиентская цена</div><div class="v">По запросу</div><div class="n">Состав цены и налоговый режим заполняются по подтверждённым данным.</div></div><div class="stats"><div class="st"><div class="k">—<small>л.с.</small></div><div class="t">Мощность</div></div><div class="st"><div class="k">—<small></small></div><div class="t">Двигатель</div></div><div class="st"><div class="k">—<small></small></div><div class="t">Срок поставки</div></div><div class="st"><div class="k">—<small>км</small></div><div class="t">Пробег</div></div></div></div><div class="gal"><img src="../assets/photo-placeholder.svg" alt="Демонстрационное место для фотографии"><img src="../assets/photo-placeholder.svg" alt="Демонстрационное место для фотографии"><img src="../assets/photo-placeholder.svg" alt="Демонстрационное место для фотографии"><img src="../assets/photo-placeholder.svg" alt="Демонстрационное место для фотографии"><img src="../assets/photo-placeholder.svg" alt="Демонстрационное место для фотографии"></div><div class="cols"><div class="card"><h3>Автомобиль</h3><dl><dt>Модель</dt><dd>МАРКА MOD X</dd><dt>Комплектация</dt><dd>ДЕМОНСТРАЦИЯ</dd><dt>Год</dt><dd>—</dd><dt>Двигатель</dt><dd>По документам</dd><dt>Коробка</dt><dd>По документам</dd><dt>Кузов / салон</dt><dd>По источнику</dd><dt>Руль</dt><dd>По источнику</dd></dl></div><div class="card"><h3>Оснащение</h3><ul><li>Подтверждённая опция 1</li><li>Подтверждённая опция 2</li><li>Подтверждённая опция 3</li><li>Подтверждённая опция 4</li><li>Подтверждённая опция 5</li><li>Подтверждённая опция 6</li></ul></div><div class="card cond"><h3>Условия</h3><p><b>Срок</b>Срок и начало отсчёта согласуются</p><p><b>Оплата</b>По условиям конкретной сделки</p><p><b>Расчёт</b>По подтверждённому расчёту</p><p><b>Документы</b>По согласованному перечню</p></div></div><div class="why"><div><em>01</em><p><b>Условия</b><span>По договору</span></p></div><div><em>02</em><p><b>Документы</b><span>По сделке</span></p></div><div><em>03</em><p><b>Поставка</b><span>По маршруту</span></p></div><div><em>04</em><p><b>Сопровождение</b><span>Формат согласуется</span></p></div></div><div class="note">ОБРАЗЕЦ ОФОРМЛЕНИЯ. Не является коммерческим предложением. Действительно до —. DEMO · r01 · 1.0.0-rc1</div></div><footer><div class="c"><b>ООО «АСТ»</b> · Реквизиты по карточке компании<br>Контакты заполняются перед выпуском</div><div class="site">avtonds<i>.</i>ru</div></footer>
+</body></html>
