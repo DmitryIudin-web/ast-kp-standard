@@ -75,8 +75,8 @@
   ],
   "files": {
     ".gitattributes": {
-      "sha256": "9b742d3c5ad5935d93fae74d54bd3e6e7b9416082b2fd9d542cbe2c10241ca40",
-      "bytes": 142
+      "sha256": "dd629767357c5eccd21a86c5c59d1c0f5606a699b721e715d51cd27c65bccfb1",
+      "bytes": 190
     },
     ".gitignore": {
       "sha256": "2063d3b4aabda30f7e89b4cc6803f2fd4abaeb433086deba4a31b202bf40bcbf",
@@ -103,28 +103,28 @@
       "bytes": 134996
     },
     "assets/fonts/SOURCES.md": {
-      "sha256": "cdec7c2c9d12085d0898006546326ee541a907d76283be04d3976611eb8026e0",
-      "bytes": 549
+      "sha256": "56606d58c33ed1b5c4ba86b3db3d7815c00c18863f439cfa8da999c1a067c2ae",
+      "bytes": 541
     },
     "assets/photo-placeholder.svg": {
       "sha256": "3bb45d5de390cf8eec7fd06ccb85de1d9f17ac37dbc9af9af2d613397dbbc2bd",
       "bytes": 568
     },
     "data/quote.example.json": {
-      "sha256": "3f7cbc9deb200d062fd5e1d6c863b908afef6382f58c87031e5d7532fa65c16d",
-      "bytes": 3082
+      "sha256": "0342b13b81cc9c2fad79d67a3a5742f44027cd886c87456b362b04d58bc4cd4c",
+      "bytes": 3023
     },
     "examples/a4.html": {
-      "sha256": "fb0b15948f0c8c51bc480a8ea1a766580231626799dcf1c470cce2466aa45d67",
-      "bytes": 10736
+      "sha256": "afa6ecf75bf4726a18bc4dc6d85787b81043223f1bb210d7bc37ae43fe0f9127",
+      "bytes": 10644
     },
     "examples/a4.jpg": {
       "sha256": "6ea0455e88ce5854781f0c0a4ce65248e9317e206aa24e5fcdf19ec2d5da127e",
       "bytes": 382057
     },
     "examples/social.html": {
-      "sha256": "2b7b26b9b7a6ca2093f28c727e27c1d9104d0475c50efcde73b795774dbc70e7",
-      "bytes": 8092
+      "sha256": "8f1ba41d0f92e0f55917fed82993df297bdb7c8a58a4dcb8a0daf11a3bbe2cfa",
+      "bytes": 8016
     },
     "examples/social.jpg": {
       "sha256": "999ce1a6aae28454705b2661dfdb37ab737c1a16ed13883fcbaf8101e5d4dfe5",
@@ -143,12 +143,12 @@
       "bytes": 9402
     },
     "templates/a4.html": {
-      "sha256": "def5c4fb37583db02e25b24537eea729d86a748146519017c8ce49b157bf86d9",
-      "bytes": 9513
+      "sha256": "a21d808feafe4c2e4874fcbb43a9df846fd88cdf3753fed21cef5f0026aed6ea",
+      "bytes": 9421
     },
     "templates/social.html": {
-      "sha256": "2fa49db53acbc1a330b02af66544018d107818caeeb1866e20e61ed188a51961",
-      "bytes": 7402
+      "sha256": "7e1e4e6da385f82ba9de614a36aad8b5be5cfaa233733ffaa415f07e193f0813",
+      "bytes": 7326
     },
     "VERSION": {
       "sha256": "627c3715dbd8d4505f82d6d11a9c6a4ddf7a5107360578e30ce6bafc1c150d56",
