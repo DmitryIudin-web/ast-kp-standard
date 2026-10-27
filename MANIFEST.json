@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "status": "prepared_for_review_and_explicit_use",
-  "date": "2026-10-23",
+  "date": "2026-10-27",
   "timezone": "Europe/Samara",
   "outputs": {
     "a4": [
@@ -131,16 +131,16 @@
       "bytes": 205155
     },
     "PROMPT.md": {
-      "sha256": "2247ced8f9a4c098d82a4db69bfb44e79384d2693df07f18365c47ff9390f037",
-      "bytes": 9215
+      "sha256": "a5ad1062d7f58e5293265be862166e47ab1936a98f8f18560b7d76062148056b",
+      "bytes": 9727
     },
     "README.md": {
-      "sha256": "43da0f01485c687e2c8c6c25ca0f79d8d387370a2f5e23d42ef9f45b1bafdd0e",
-      "bytes": 4790
+      "sha256": "702ade5d9fd93665859a9b5a9b42b00c91f7c8d307cf3210720e8535db1f22d7",
+      "bytes": 5883
     },
     "STANDARD.md": {
-      "sha256": "77087cbb28f61b813df97ae22538a232dc4599d56578abf6fbdc81b7e797dc12",
-      "bytes": 9402
+      "sha256": "6f8d28569a187f482646f556225a1effdc9e804aa8ed38105fd188fb79818512",
+      "bytes": 10396
     },
     "templates/a4.html": {
       "sha256": "a21d808feafe4c2e4874fcbb43a9df846fd88cdf3753fed21cef5f0026aed6ea",
@@ -151,8 +151,20 @@
       "bytes": 7326
     },
     "VERSION": {
-      "sha256": "627c3715dbd8d4505f82d6d11a9c6a4ddf7a5107360578e30ce6bafc1c150d56",
+      "sha256": "01c0f7d03b9babc6fef8d759c4202fdd1b0235a589c798e3b8e37accb06ad5ce",
       "bytes": 10
+    },
+    "fetch_listing_photos.py": {
+      "sha256": "b5c07adca88d91cb172bf46adaaf75870488abd8fb1d4dbba259eb2a8565cf49",
+      "bytes": 10948
+    },
+    "PHOTO_IMPORT.md": {
+      "sha256": "4477dd2565228d4262246302c63f692f89698156893ebeec7b54f890e35dfcf9",
+      "bytes": 3132
+    },
+    "requirements-photo-import.txt": {
+      "sha256": "5f7908241daaa3620dfb3ba8018b9233d6e4511220173f5467b1140155728f1a",
+      "bytes": 20
     }
   },
   "checks": {
@@ -160,6 +172,7 @@
     "visual_review": "passed",
     "external_requests": 0,
     "local_paths_and_secret_patterns": "passed",
-    "production_integration": "not_performed"
+    "production_integration": "not_performed",
+    "photo_import": "cli_added_manual_identity_verification_required"
   }
 }
