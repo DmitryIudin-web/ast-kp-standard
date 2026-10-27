@@ -155,12 +155,12 @@
       "bytes": 10
     },
     "fetch_listing_photos.py": {
-      "sha256": "b5c07adca88d91cb172bf46adaaf75870488abd8fb1d4dbba259eb2a8565cf49",
-      "bytes": 10948
+      "sha256": "e54c517f809867bc8ef6e517222df3d8e952b72cee2f142364addebb465d0b52",
+      "bytes": 11834
     },
     "PHOTO_IMPORT.md": {
-      "sha256": "4477dd2565228d4262246302c63f692f89698156893ebeec7b54f890e35dfcf9",
-      "bytes": 3132
+      "sha256": "5a6e48bd70e2d62d3a63f824c96b6d4d75ccb39da178cd7bfd88d8d7bd5cfc7b",
+      "bytes": 3601
     },
     "requirements-photo-import.txt": {
       "sha256": "5f7908241daaa3620dfb3ba8018b9233d6e4511220173f5467b1140155728f1a",
