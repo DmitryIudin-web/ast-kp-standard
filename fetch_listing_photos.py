@@ -12,7 +12,7 @@ import socket
 import sys
 import time
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urlparse
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
@@ -20,6 +20,7 @@ from playwright.sync_api import sync_playwright
 
 
 MAX_BYTES = 25 * 1024 * 1024
+MAX_TOTAL_BYTES = 100 * 1024 * 1024
 IMAGE_TYPES = {
     "image/jpeg": (".jpg", b"\xff\xd8\xff"),
     "image/png": (".png", b"\x89PNG\r\n\x1a\n"),
@@ -106,6 +107,7 @@ def image_urls_from_page(page) -> list[dict]:
             if (m) add(m[1], 'background', r.width, r.height);
           });
           const seen = new Set();
+          out.sort((a, b) => (b.width * b.height) - (a.width * a.height));
           return out.filter(x => {
             if (x.width && x.height && (x.width < 100 || x.height < 80)) return false;
             if (seen.has(x.url)) return false;
@@ -115,9 +117,18 @@ def image_urls_from_page(page) -> list[dict]:
     )
 
 
-def download_image(url: str, timeout: float) -> tuple[bytes, str, str]:
+def download_image(url: str, timeout: float, referer: str) -> tuple[bytes, str, str]:
     validate_public_url(url)
-    request = Request(url, headers={"User-Agent": "AST-Quote-Photo-Importer/1.0", "Accept": "image/*"})
+    source = urlparse(referer)
+    safe_referer = f"{source.scheme}://{source.netloc}/"
+    request = Request(
+        url,
+        headers={
+            "User-Agent": "AST-Quote-Photo-Importer/1.0",
+            "Accept": "image/*",
+            "Referer": safe_referer,
+        },
+    )
     opener = build_opener(SafeRedirectHandler())
     with opener.open(request, timeout=timeout) as response:
         final_url = validate_public_url(response.geturl())
@@ -149,6 +160,8 @@ def main() -> int:
     try:
         listing_url = validate_public_url(args.url)
         args.out.mkdir(parents=True, exist_ok=True)
+        if any(args.out.iterdir()):
+            raise RuntimeError("Каталог результата не пуст. Укажите новый каталог через --out, чтобы не смешивать фото разных объявлений.")
         with sync_playwright() as playwright:
             browser = playwright.chromium.launch(headless=True)
             context = browser.new_context(ignore_https_errors=False)
@@ -184,12 +197,17 @@ def main() -> int:
             "notice": "Проверьте вручную, что каждый снимок относится к нужному автомобилю.",
             "photos": [],
         }
+        total_bytes = 0
         for i, candidate in enumerate(candidates[: args.max_images], start=1):
             try:
-                data, ext, final_url = download_image(candidate["url"], args.timeout)
+                data, ext, final_url = download_image(candidate["url"], args.timeout, listing_url)
+                if total_bytes + len(data) > MAX_TOTAL_BYTES:
+                    print("Достигнут общий лимит 100 МБ; оставшиеся изображения не скачаны.", file=sys.stderr)
+                    break
                 digest = hashlib.sha256(data).hexdigest()
                 name = f"{i:02d}-{digest[:10]}{ext}"
                 (args.out / name).write_bytes(data)
+                total_bytes += len(data)
                 manifest["photos"].append(
                     {
                         "file": name,
